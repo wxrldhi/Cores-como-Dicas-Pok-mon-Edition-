@@ -9,7 +9,7 @@
       name="description"
       content="Jogo web interativo de adivinhação de cores do Pokémon, pronto para GitHub Pages."
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=20261110-1" />
   </head>
   <body>
     <div class="app-shell">
@@ -33,7 +33,7 @@
           <div class="rules-box">
             <h3>Regras do jogo</h3>
             <ul>
-              <li>Você tem 3 tentativas para acertar a cor de cada Pokémon.</li>
+              <li>Você tem 2 tentativas para acertar a cor de cada Pokémon.</li>
               <li>Em cada rodada, o jogo segue até 5 Pokémon.</li>
               <li>Se acertar na 1ª ou 2ª tentativa, ganha 50 pontos.</li>
               <li>Se acertar na 3ª tentativa, ganha 25 pontos.</li>
@@ -68,8 +68,22 @@
               <strong id="lives">3</strong>
             </div>
             <div class="status-item">
+              <span>Tempo</span>
+              <strong id="status-timer">15s</strong>
+            </div>
+            <div class="status-item">
               <span>Pokémon</span>
               <strong id="round-progress">0/5</strong>
+            </div>
+          </div>
+
+          <div class="timer-progress-wrap" aria-label="Tempo restante">
+            <div class="timer-progress-header">
+              <span>Tempo restante</span>
+              <strong id="timer">15s</strong>
+            </div>
+            <div class="timer-progress-shell">
+              <div id="time-progress-bar" class="timer-progress-bar"></div>
             </div>
           </div>
 
@@ -80,6 +94,10 @@
             <div class="pokemon-info">
               <p class="label">Pokémon</p>
               <h2 id="pokemon-name">Carregando...</h2>
+              <div class="round-timer-banner">
+                <span>Tempo da rodada</span>
+                <strong id="round-timer">15s</strong>
+              </div>
             </div>
           </div>
 
@@ -92,8 +110,31 @@
           </button>
         </section>
       </main>
+
+      <div id="result-overlay" class="result-overlay hidden" aria-live="assertive" aria-atomic="true">
+        <div class="result-backdrop"></div>
+        <div class="result-visual">
+          <div id="result-particles" class="result-particles" aria-hidden="true"></div>
+          <div id="result-clock" class="result-clock" aria-hidden="true">
+            <div class="clock-face">
+              <span class="clock-hand clock-hand-minute"></span>
+              <span class="clock-hand clock-hand-hour"></span>
+              <span class="clock-core"></span>
+            </div>
+          </div>
+
+          <div id="result-badge" class="result-badge">
+            <span id="result-title" class="result-title">ACERTOU!</span>
+            <span id="result-subtitle" class="result-subtitle">Você mandou muito bem!</span>
+            <div class="result-metrics">
+              <span id="result-points" class="result-pill result-pill-points">+0 pts</span>
+              <span id="result-streak" class="result-pill result-pill-streak">Streak 0</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20261110-1"></script>
   </body>
 </html>
